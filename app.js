@@ -7,16 +7,16 @@ Promise.all([fetch(randomUsersURL), fetch(randomUsersURL), fetch(randomUsersURL)
 
 
 function renderUserCard(userArr) {
-    const user1 = userArr[0]
-    const user2 = userArr[1]
-    const user3 = userArr[2]
+    // const user1 = userArr[0]
+    // const user2 = userArr[1]
+    // const user3 = userArr[2]
 
-    console.log(user1)
+    // console.log(user1)
 
     let newCards = userArr.map((user, idx) => {
         return `
         <div class="card">
-            <div class='page'><a href="#${idx + 1}">${idx + 1}</a></div>
+            <div class='page'><a href="#${idx}">${idx + 1}</a></div>
             <div class='user'>
                 <p>${user.fullName}</p>
                 <p>${user.email}</p>
