@@ -11,17 +11,19 @@ function renderUserCard(userArr) {
     const user2 = userArr[1]
     const user3 = userArr[2]
 
-    let newCards = userArr.map(user => {
+    console.log(user1)
+
+    let newCards = userArr.map((user, idx) => {
         return `
         <div class="card">
-            <div class='page'><a href="#1">1</a></div>
+            <div class='page'><a href="#${idx + 1}">${idx + 1}</a></div>
             <div class='user'>
-                <p>Name</p>
-                <p>Email</p>
-                <div class='avatar'></div>
+                <p>${user.fullName}</p>
+                <p>${user.email}</p>
+                <div class='avatar' style="background-image: url(${user.avatar})"></div>
             </div>
         </div>
         `
-    }).join()
+    }).join('')
     cards.innerHTML = newCards
 }
