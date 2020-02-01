@@ -1,6 +1,6 @@
 const randomUsersURL = 'https://acme-users-api-rev.herokuapp.com/api/users/random'
 const cards = document.querySelector('#cards')
-let users
+
 
 window.addEventListener('hashchange', () => {
     const idStr = window.location.hash.slice(1)
@@ -28,19 +28,10 @@ window.addEventListener('hashchange', () => {
 
 Promise.all([fetch(randomUsersURL), fetch(randomUsersURL), fetch(randomUsersURL)])
     .then(response => Promise.all(response.map(result => result.json())))
-    .then(data => {
-        users = data
-        renderUserCard(users)
-    })
+    .then(renderUserCard)
 
 
 function renderUserCard(userArr) {
-    // const user1 = userArr[0]
-    // const user2 = userArr[1]
-    // const user3 = userArr[2]
-
-    // console.log(user1)
-
     let newCards = userArr.map((user, idx) => {
         return `
         <div class="card" data-id="${idx}" style="order: 0">
