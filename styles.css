@@ -72,6 +72,10 @@ body > a {
     color: white;
 }
 
+.hide {
+    opacity: 0;
+}
+
 @media (max-width: 600px) {
     #cards {
         flex-direction: column;
