@@ -1,6 +1,5 @@
 const randomUsersURL = 'https://acme-users-api-rev.herokuapp.com/api/users/random'
 const cards = document.querySelector('#cards')
-let emails
 
 Promise.all([fetch(randomUsersURL), fetch(randomUsersURL), fetch(randomUsersURL)])
     .then(response => Promise.all(response.map(result => result.json())))
@@ -13,24 +12,14 @@ function renderUserCard(userArr) {
             <div class='page'><a href="#${idx}">${idx + 1}</a></div>
             <div class='user'>
                 <p>${user.fullName}</p>
-                <p class='email'>${user.email}</p>
+                <p>${user.email}</p>
                 <div class='avatar' style="background-image: url(${user.avatar})"></div>
             </div>
         </div>
         `
     }).join('')
 
-
-    emails = [...document.getElementsByClassName('email')]
-
-    emails.forEach(email => {
-        if (email.innerHTML.length > 24) email.classList.add('reduce-at-24')
-        console.log(email.innerHTML.length)
-        console.log(email.classList)
-    })
-
     cards.innerHTML = newCards
-
     window.location.hash = '#all' //forces hash refresh on reload
 }
 
@@ -56,3 +45,13 @@ window.addEventListener('hashchange', () => {
         })
     }
 })
+
+
+// Code for dynamic email sizing
+// let emails
+// emails = [...document.getElementsByClassName('email')]
+// emails.forEach(email => {
+//     if (email.innerHTML.length > 24) email.classList.add('reduce-at-24')
+//     console.log(email.innerHTML.length)
+//     console.log(email.classList)
+// })
