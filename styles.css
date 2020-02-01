@@ -15,29 +15,24 @@ a {
 }
 
 body > a {
-
     font-size: 2rem;
-    margin: 2rem;
-}
-
-/* #pages {
-    border: 1px black solid;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
     margin: 1rem;
-} */
+}
 
 #cards {
     display: flex;
-    width: 100% / 3;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0rem 1rem;
+    /* border: 1px black solid; */
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    margin: 2rem;
+    width: 100%;
     /* border: 1px black solid; */
 }
 
@@ -48,8 +43,8 @@ body > a {
     justify-content: space-around;
     padding: 1rem;
     background-color: #497F7F;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border: black solid 1px;
     border-radius: 1rem;
 }
@@ -59,7 +54,7 @@ body > a {
 }
 
 .page {
-    margin: 1rem;
+    margin-bottom: 2rem;
 }
 
 .avatar {
@@ -68,10 +63,18 @@ body > a {
     padding: 1rem;
     border-radius: 5rem;
     background-color: white;
-    background-image: url();
+    background-position: center;
+    background-size: cover;
 }
 
 .selected {
     background-color: #497F7F;
     color: white;
+}
+
+@media (max-width: 600px) {
+    #cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
