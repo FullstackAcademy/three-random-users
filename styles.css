@@ -43,14 +43,19 @@ body > a {
     justify-content: space-around;
     padding: 1rem;
     background-color: #497F7F;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border: black solid 1px;
     border-radius: 1rem;
 }
 
-.user > p {
+.user p {
     color: white;
+    font-size: smaller;
+}
+
+.user p:last-child {
+    font-style: italic;
 }
 
 .page {
