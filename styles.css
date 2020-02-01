@@ -21,7 +21,7 @@ body > a {
 
 #cards {
     display: flex;
-    justify-content: space-evenly;
+    flex-flow: wrap space-around;
     width: 100%;
     padding: 0rem 1rem;
     /* border: 1px black solid; */
@@ -51,11 +51,7 @@ body > a {
 
 .user p {
     color: white;
-    font-size: smaller;
-}
-
-.user p:last-child {
-    font-style: italic;
+    font-size: 100%;
 }
 
 .page {
@@ -90,7 +86,15 @@ body > a {
     opacity: 0;
 }
 
-@media (max-width: 600px) {
+.reduce-at-24 {
+    font-size: 80%
+}
+
+.reduce-at-31 {
+    font-size: 80%
+}
+
+@media (max-width: 900px) {
     #cards {
         flex-direction: column;
         align-items: center;
