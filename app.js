@@ -45,5 +45,5 @@ function renderUserCard(userArr) {
         `
     }).join('')
     cards.innerHTML = newCards
-    window.location.hash = '#all'
+    window.location.hash = '#all' //forces hash refresh on reload
 }
