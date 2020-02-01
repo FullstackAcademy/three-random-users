@@ -54,7 +54,13 @@ body > a {
 }
 
 .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 2rem;
+    width: 2rem;
+    height: 2.5rem;
+    border-radius: 20%;
 }
 
 .avatar {
@@ -67,12 +73,15 @@ body > a {
     background-size: cover;
 }
 
-.selected {
+.selected > div {
     background-color: #497F7F;
+}
+
+.selected > div > a { 
     color: white;
 }
 
-.hide {
+.hidden > div:last-child {
     opacity: 0;
 }
 
