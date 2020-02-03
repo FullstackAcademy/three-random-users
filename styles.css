@@ -10,13 +10,13 @@ body {
     background-color: #F9F0E7;
 }
 
-a {
-    color: #497F7F;
-}
-
 body > a {
     font-size: 2rem;
     margin: 1rem;
+}
+
+a {
+    color: #497F7F;
 }
 
 #cards {
@@ -24,7 +24,6 @@ body > a {
     flex-flow: wrap space-around;
     width: 100%;
     padding: 0rem 1rem;
-    /* border: 1px black solid; */
 }
 
 .card {
@@ -33,7 +32,6 @@ body > a {
     align-items: center;
     margin: 2rem;
     width: 100%;
-    /* border: 1px black solid; */
 }
 
 .user {
@@ -45,13 +43,9 @@ body > a {
     background-color: #497F7F;
     width: 250px;
     height: 250px;
+    color: white;
     border: black solid 1px;
     border-radius: 1rem;
-}
-
-.user p {
-    color: white;
-    font-size: 80%;
 }
 
 .page {
@@ -86,20 +80,21 @@ body > a {
     opacity: 0;
 }
 
+.email.reduce-at-24 {
+    font-size: 80%
+}
+
+.email.reduce-at-32 {
+    font-size: 70%
+}
+
+.email.reduce-at-39 {
+    font-size: 65%
+}
+
 @media (max-width: 900px) {
     #cards {
         flex-direction: column;
         align-items: center;
     }
 }
-
-
-/* Code for dynamic email sizing
-.reduce-at-24 {
-    font-size: 80%
-}
-
-.reduce-at-31 {
-    font-size: 80%
-}
-*/

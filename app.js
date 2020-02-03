@@ -4,15 +4,27 @@ const cards = document.querySelector('#cards')
 Promise.all([fetch(randomUsersURL), fetch(randomUsersURL), fetch(randomUsersURL)])
     .then(response => Promise.all(response.map(result => result.json())))
     .then(renderUserCard)
+    .catch(console.log)
 
 function renderUserCard(userArr) {
     let newCards = userArr.map((user, idx) => {
+        //Adjust email font size to fit card
+        let fontSize = ''
+        const emailLength = user.email.length
+        if (emailLength > 39) {
+            fontSize = 'reduce-at-39'
+        } else if (emailLength > 32) {
+            fontSize = 'reduce-at-32'
+        } else if (emailLength > 24) {
+            fontSize = 'reduce-at-24'
+        }
+
         return `
         <div class="card" data-id="${idx}" style="order: 0">
             <div class='page'><a href="#${idx}">${idx + 1}</a></div>
             <div class='user'>
                 <p>${user.fullName}</p>
-                <p>${user.email}</p>
+                <p class = 'email ${fontSize}'>${user.email}</p>
                 <div class='avatar' style="background-image: url(${user.avatar})"></div>
             </div>
         </div>
@@ -45,13 +57,3 @@ window.addEventListener('hashchange', () => {
         })
     }
 })
-
-
-// Code for dynamic email sizing
-// let emails
-// emails = [...document.getElementsByClassName('email')]
-// emails.forEach(email => {
-//     if (email.innerHTML.length > 24) email.classList.add('reduce-at-24')
-//     console.log(email.innerHTML.length)
-//     console.log(email.classList)
-// })
