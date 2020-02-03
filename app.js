@@ -39,14 +39,23 @@ window.addEventListener('hashchange', () => {
     const idStr = window.location.hash.slice(1)
     const idNum = window.location.hash.slice(1) * 1
     const userCards = [...document.querySelectorAll('.card')]
+    // const orderCode = [
+    //     {0: 1, 1: 0, 2: 1},
+    //     {0: 0, 1: 0, 2: 0},
+    //     {0: 0, 1: 1, 2: 0}
+    // ]
 
     if (Number.isNaN(idNum) || idNum >= userCards.length || idNum < 0) {
         userCards.forEach(card => {
             card.classList.remove('selected', 'hidden')
-            card.setAttribute('order', '0')
+            card.style.order = '0'
         })
     } else {
+        // const order = orderCode[idNum]
+
         userCards.forEach(card => {
+            // card.style.order = order[card.getAttribute('data-id')]
+
             if (card.getAttribute('data-id') === idStr) {
                 card.classList.add('selected')
                 card.classList.remove('hidden')
@@ -56,4 +65,5 @@ window.addEventListener('hashchange', () => {
             }
         })
     }
+
 })
