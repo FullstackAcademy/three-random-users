@@ -12,6 +12,7 @@ body {
 
 body > a {
     font-size: 2rem;
+    font-weight: bolder;
     margin: 1rem;
 }
 
@@ -21,7 +22,6 @@ a {
 
 #cards {
     display: flex;
-    flex-flow: wrap space-around;
     width: 100%;
     padding: 0rem 1rem;
 }
